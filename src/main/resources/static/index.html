@@ -104,14 +104,12 @@
 <script>
     let currentUserId = null;
 
-    // Глобальный переключатель загрузки
     function toggleLoading(show) {
         const overlay = document.getElementById('loadingOverlay');
         if (show) overlay.classList.remove('hidden');
         else overlay.classList.add('hidden');
     }
 
-    // Загрузка пользователей (Вид 1)
     async function loadUsers() {
         toggleLoading(true);
         try {
@@ -130,11 +128,10 @@
         } catch (e) {
             alert('Backend Error: ' + e.message);
         } finally {
-            toggleLoading(false); // Всегда выключаем загрузку
+            toggleLoading(false);
         }
     }
 
-    // Добавление пользователя (с валидацией)
     async function addUser() {
         const name = document.getElementById('userName').value;
         const email = document.getElementById('userEmail').value;
@@ -176,7 +173,6 @@
         await loadTasks();
     }
 
-    // Загрузка задач (Вид 2)
     async function loadTasks() {
         toggleLoading(true);
         try {
@@ -245,7 +241,6 @@
         }
     }
 
-    // Первый запуск
     loadUsers();
 </script>
 </body>

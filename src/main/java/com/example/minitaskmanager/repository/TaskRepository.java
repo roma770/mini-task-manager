@@ -7,6 +7,5 @@ import java.util.List;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    // Метод для поиска задач конкретного пользователя по его ID
     List<Task> findByUserId(Long userId);
 }
